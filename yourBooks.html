@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Emporium - Your Books</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="yourBooksStyles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="jquery.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let hu = document.getElementById("helloUser");
+        hu.textContent = "Hello, " + (localStorage.getItem("currUser"));
+});
+</script>
+</head>
+
+<body onload="return yourBooksLoaded()">
+  <nav id="navbar">
+    <!-- LOGO -->
+    <div class="navElement">
+        <a href="index.html"><img src="images/logo 3.O.png" alt="logo.png" id="navLogo"></a>
+    </div>
+    
+    <!-- LANGUAGE -->
+    <div class="navElement">
+        <a href="#" id="helloUser">
+
+        </a>
+        <!-- <select id="lang">
+            <option value="english"><a href="#">English</a></option>
+            <option value="hindi"><a href="#">Hindi</a></option>
+            <option value="gujarati"><a href="#">Gujarati</a></option>
+            <option value="marathi"><a href="#">Marathi</a></option>
+        </select>            
+        <i class="fa-solid fa-angle-down" id="langDown"></i> -->
+    </div>
+    
+    <!-- SEARCH BAR WITH BUTTON -->
+    <div class="navElement">
+        <form action="" id="searchBar">
+            <label> <i class="fa-solid fa-magnifying-glass" id="searchGlass"></i> <input type="submit" name="Search" value="" id="navSubmit"></label>
+            <input type="search" name="Search" id="navSearch" placeholder="Search..."  autocomplete="off">
+        </form>
+    </div>
+    
+    <!-- YOUR BOOKS -->
+    <div class="navElement">
+        <a href="yourBooks.html" target="_blank" id="yourBooks"> Your books</a>
+    </div>
+    
+    <!-- GENRE -->
+    <!-- Non-fiction, fantasy, fiction, dystopian, mystery, horror -->
+    <div class="navElement">
+        <!-- <a href="#"> Genre</a> -->
+        <select id="genre">
+            <option value="genre-default" hidden>Genre</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Science Fiction">Sci-Fi</option>
+            <option value="Dystopian">Dystopian</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Horror">Horror</option>
+        </select>
+        <i class="fa-solid fa-angle-down"></i>
+    </div>
+    
+    <!-- ABOUT US -->
+    <div class="navElement">
+        <a href="aboutUs.html"> About Us</a>
+    </div>
+</nav>
+  
+  <main id="mainDiv">
+    
+    <div id="addedItems">
+      <!--<div class="itemContainer">
+             <div class="item">
+            <img src="images/bookCovers/1.jpg" alt="3" class="itemImg">
+            <div class="bookTitle">Author</div>
+            </div>
+            <div class="itemDesc">
+            <div class="grid-container">
+                <div>Item Name:</div>
+                <div id="itemName" class="grid-item">123</div>
+                <div>Price:</div>
+                <div id="itemPrice" class="grid-item">$ 123</div>
+                <div>Rating:</div>
+                <div id="itemRating" class="grid-item">3<i class="fa-solid fa-star"></i></div>
+                <div>Quantity:</div>
+                <div id="itemQty" class="grid-item">
+                <i class="fa-solid fa-minus" class="itemQtyMinus"></i>
+                1
+                <i class="fa-solid fa-plus" class="itemQtyMinus"></i>
+                
+                </div>
+            </div>
+            </div>
+        </div> -->        
+      <!-- <div class="noItems">
+        Oops! Your cart is empty. 
+      </div> -->
+    </div>
+
+
+    <!-- ORDER BOX -->
+    <div id="order">
+      <h3>Proceed with cart</h3>
+      <hr>
+      <div id="billContainer">
+        <table id="bill">
+          <tbody>
+            <tr>
+              <td>Items:</td>
+              <td id="order-totalItems">X</td>
+            </tr>
+            <tr>
+              <td>Amount:</td>
+              <td id="order-amount">X</td>
+            </tr>
+            <tr>
+              <td>Taxes:</td>
+              <td id="order-gst">X</td>
+            </tr>
+            <tr>
+              <td>Net Price:</td>
+              <td id="order-finalPrice">X</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="placeOrderRow">
+            <div id="placeOrder">
+              <a href="Purchase.html"><button id="orderBtn">Place order</button></a>
+            </div>
+            <div>
+              <div class="resetItems">
+                <button id="resetBtn">Reset</button>
+              </div>
+            </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>

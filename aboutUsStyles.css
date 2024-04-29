@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'nunito sans';
+
+}
+
+a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+#aboutUsLogo {
+    width: 150px;
+    margin: 30px;
+}
+
+
+main {
+    /* display: flex; */
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.box {
+    margin: 20px auto 5px;
+    padding: 20px;
+    background-color: #222; /* Lighter gray for background */
+    outline: 1px solid #ccc; /* Lighter border */
+    border-radius: 10px;
+    width: 60%;
+    color: #ccc; /* Darker text color for better contrast */
+}
+h3 {
+    color: #ccc;
+    text-align: center;
+    margin:10px;
+}
+
+#logos {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 45%;
+}
+
+.fa-brands {
+    font-size: 20px;
+}
+
+.fa-brands:hover {
+    color: orange;
+}
+
+#feedbackForm {
+    border-radius: 20px;
+    border: 1px solid white;
+    margin: 20px;
+}
+
+#feedbackForm input {
+    margin:5px 20px;
+}
+
+.ipContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px 15px;
+}
+/* 
+.ipContainer input {
+    justify-content: end;
+} */
+
+#bugDesc {
+    margin-left: 20px;
+    resize: none;
+}
+
+#Submit {
+    position: relative;
+    left: 220px;
+    width: 100px;
+    padding: 5px;
+    background-color: #bbb;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.7s;
+    transition: transform 0.4s;
+}
+
+#Submit:hover {
+    background-color: #eee;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#bugDate {
+    position: relative;
+    top:-9px;
+    padding: 5px;
+}

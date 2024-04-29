@@ -1,0 +1,111 @@
+#checkout {
+    background-color: #222;
+    border: 2px solid #999;
+    /* border-radius: 20px; */
+    padding: 10px;
+    width: 65%;
+    height: 850px;
+    font-weight: 450;
+    margin: 15%;
+    border-radius: 10px;
+    margin-top: 60px;
+    align-items: center;
+    /* margin-bottom: -50px; */
+} 
+
+#checkout>h3 {
+    text-align: center;
+    color: #ddd;
+    margin: 10px;
+    font-weight: 700;
+
+}
+
+#checkout h4 {
+    margin-left: 4px;
+    text-align: center; /* Align the "Enter delivery address" text at the center */
+    font-size: large;
+    font-weight: 700;
+}
+
+.box {
+    margin: 20px auto 5px;
+    padding: 20px;
+    background-color: #222; /* Lighter gray for background */
+    outline: 1px solid #ccc; /* Lighter border */
+    border-radius: 10px;
+    width: 60%;
+    color: #ccc; /* Darker text color for better contrast */
+    font-weight: 400;
+    font-size: small;
+}
+
+#purchaseform {
+    color: #ddd;
+}
+
+#checkout>option{
+    background-color: aqua;
+}
+
+#Submit-Purchase{
+    margin-left: 38%;
+    width: 15%;
+    height: 30px;
+    background-color: #bbb;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.7s;
+    transition: transform 0.4s;
+}
+
+#Submit-Purchase:hover {
+    background-color: #eee;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+#Reset-Purchase{
+    margin-left: 2%;
+    background-color: #bbb;
+    width: 15%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.7s;
+    transition: transform 0.4s;
+}
+
+#Reset-Purchase:hover{
+    background-color: #eee;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#CoD{
+    margin-left: 25%;
+}
+
+#Card{
+    margin-left: 10px;
+}
+.btn {
+    text-align: center;
+}
+
+#rzp-button1 {
+    padding: 3px 7px;
+    margin: 15px;
+    transition: 0.3s;
+    border-radius: 5px;
+    border: none;
+}
+#rzp-button1:hover {
+    padding: 3px 7px;
+    margin: 15px;
+    background-color: #999  ;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+

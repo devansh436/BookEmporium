@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Emporium</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="jquery.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let hu = document.getElementById("helloUser");
+            hu.textContent = "Hello, " + (localStorage.getItem("currUser"));
+    });
+    </script>   
+</head>
+<body onload="return loadIndex()">
+    <nav id="navbar">
+        <!-- LOGO -->
+        <div class="navElement">
+            <a href="index.html"><img src="images/logo 3.O.png" alt="logo.png" id="navLogo"></a>
+        </div>
+        
+        <!-- LANGUAGE -->
+        <div class="navElement">
+            <a href="#" id="helloUser">
+
+            </a>      
+            <!-- <select id="lang">
+                <option value="english"><a href="#">English</a></option>
+                <option value="hindi"><a href="#">Hindi</a></option>
+                <option value="gujarati"><a href="#">Gujarati</a></option>
+                <option value="marathi"><a href="#">Marathi</a></option>
+            </select>            
+            <i class="fa-solid fa-angle-down" id="langDown"></i> -->
+        </div>
+        
+        <!-- SEARCH BAR WITH BUTTON -->
+        <div class="navElement">
+            <form action="" id="searchBar">
+                <label> <i class="fa-solid fa-magnifying-glass" id="searchGlass"></i> <input type="submit" name="Search" value="" id="navSubmit"></label>
+                <input type="search" name="Search" id="navSearch" placeholder="Search..."  autocomplete="off">
+            </form>
+        </div>
+        
+        <!-- YOUR BOOKS -->
+        <div class="navElement">
+            <a href="yourBooks.html" target="_blank" id="yourBooks"> Your books</a>
+        </div>
+        
+        <!-- GENRE -->
+        <!-- Non-fiction, fantasy, fiction, dystopian, mystery, horror -->
+        <div class="navElement">
+            <!-- <a href="#"> Genre</a> -->
+            <select id="genre">
+                <option value="genre-default" hidden>Genre</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Science Fiction">Sci-Fi</option>
+                <option value="Dystopian">Dystopian</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Horror">Horror</option>
+            </select>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        
+        <!-- ABOUT US -->
+        <div class="navElement">
+            <a href="aboutUs.html"> About Us</a>
+        </div>
+    </nav>
+
+    <!-- MAIN MASALA -->
+    <main>        
+        <div id="poster">
+            <img src="images/libraryPoster1.png" alt="lib.jpeg" class="posterImg">
+    
+            <img src="images/libraryPoster2.png" alt="lib.jpeg" class="posterImg">
+    
+        </div>
+
+        <div id="booksDisplay">
+            <!-- 1 -->
+            <div class="book" id="1">
+                <img src="images/bookCovers/1.jpg" alt="book1.webp">
+                <div class="bookDesc">
+                    <div class="bookTitle">A Brief History of Time</div>
+                    <div class="author">
+                        ~Stephen Hawking
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $14.99
+                        </div>
+                        <div class="rating">
+                            (4.9<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        A captivating exploration of cosmology and the universe's origins, Stephen Hawking's 'A Brief History of Time' simplifies complex concepts.
+                    </div>
+                </div>
+            </div>   
+            <!-- 2 -->
+            <div class="book" id="2">
+                <img src="images/bookCovers/2.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Harry Potter and the Deathly Hallows</div>
+                    <div class="author">
+                        ~JK. Rowling
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $12.99
+                        </div>
+                        <div class="rating">
+                            (4.7<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                            Epic finale sees Harry, Hermione, and Ron hunt Horcruxes to defeat Voldemort; sacrifices, battles, and resolution ensue.
+                    </div>
+                </div>
+            </div>   
+            <!-- 3 -->
+            <div class="book" id="3">
+                <img src="images/bookCovers/3.jpg" alt="book1.webp">
+                <div class="bookDesc">
+                    <div class="bookTitle">To Kill a Mockingbird</div>
+                    <div class="author">
+                        ~Harper Lee
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $7.99
+                        </div>
+                        <div class="rating">
+                            (4.2<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Southern tale of racial injustice, moral growth, and empathy seen through the eyes of Scout Finch.
+                    </div>
+                </div>
+            </div>   
+            <!-- 4 -->
+            <div class="book" id="4">
+                <img src="images/bookCovers/4.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Hunger Games: Catching Fire</div>
+                    <div class="author">
+                        ~Suzanne Collins
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $11.99
+                        </div>
+                        <div class="rating">
+                            (4.5<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Katniss defies dystopian government, ignites rebellion amidst deadly Quarter Quell.
+                    </div>
+                </div>
+            </div>   
+            <!-- 5 -->
+            <div class="book" id="5">
+                <img src="images/bookCovers/5.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Vampirates</div>
+                    <div class="author">
+                        ~Justin Somper
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $5.99
+                        </div>
+                        <div class="rating">
+                            (5.0<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Twins Connor and Grace join pirate vampires on high-seas adventures, balancing bloodthirsty past with newfound family.
+                    </div>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="book" id="6">
+                <img src="images/bookCovers/6.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The Lost Symbol</div>
+                    <div class="author">
+                        ~Dan Brown
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $12.99
+                        </div>
+                        <div class="rating">
+                            (3.9<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Robert Langdon races against time in Washington D.C., unlocking ancient mysteries to save kidnapped mentor.
+                    </div>
+                </div>
+            </div>   
+            <!-- 7 -->
+            <div class="book" id="7">
+                <img src="images/bookCovers/7.jpg" alt="book.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Horror Unmasked</div>
+                    <div class="author">
+                        ~Brad Weismann
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $20.99
+                        </div>
+                        <div class="rating">
+                            (3.7<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        A chilling anthology revealing the dark, twisted secrets lurking behind seemingly ordinary faces in suburbia.
+                    </div>
+                </div>
+            </div>   
+            <!-- 8 -->
+            <div class="book" id="8">
+                <img src="images/bookCovers/8.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Divergent</div>
+                    <div class="author">
+                        ~Veronica Roth
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $12.99
+                        </div>
+                        <div class="rating">
+                            (4.7<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Tris Prior navigates factions, love, and rebellion in a divided society, challenging societal norms and survival instincts.
+                    </div>
+                </div>
+            </div>   
+            <!-- 9 -->
+            <div class="book" id="9">
+                <img src="images/bookCovers/9.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The Maze Runner</div>
+                    <div class="author">
+                        ~James Dashner
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $11.99
+                        </div>
+                        <div class="rating">
+                            (4.3<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Thomas awakens with no memory, trapped in a maze, fights for escape while uncovering the truth of their existence.
+                    </div>
+                </div>
+            </div>   
+            <!-- 10 -->
+            <div class="book" id="10">
+                <img src="images/bookCovers/10.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Legend</div>
+                    <div class="author">
+                        ~Marie Lu
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $17.99
+                        </div>
+                        <div class="rating">
+                            (4.3<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Prodigy June and rebel Day unite against tyranny, navigating corruption and loyalty in a divided dystopian Los Angeles.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="11">
+                <img src="images/bookCovers/11.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The Da Vinci Code</div>
+                    <div class="author">
+                        ~Dan Brown
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $14.99
+                        </div>
+                        <div class="rating">
+                            (4.7<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Robert Langdon deciphers symbols, unraveling religious mysteries while evading danger and uncovering hidden truths.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="12">
+                <img src="images/bookCovers/12.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">City of Bones</div>
+                    <div class="author">
+                        ~Cassandra Clare
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $7.99
+                        </div>
+                        <div class="rating">
+                            (4.2<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Clary Fray discovers her angelic heritage, delving into a world of demons, romance, and supernatural secrets.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="13">
+                <img src="images/bookCovers/13.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The Giver</div>
+                    <div class="author">
+                        ~Lois Lowry
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $11.99
+                        </div>
+                        <div class="rating">
+                            (4.3<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        onas explores a seemingly utopian society, confronting dark truths and embracing individuality in a world without color.                    </div>
+                </div>
+            </div>   
+            <div class="book" id="14">
+                <img src="images/bookCovers/14.webp" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The Host</div>
+                    <div class="author">
+                        ~Stephenie Meyer
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $19.99
+                        </div>
+                        <div class="rating">
+                            (4.2<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Wanderer shares a body with Melanie, navigating love, loyalty, and identity in a world conquered by alien souls.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="15">
+                <img src="images/bookCovers/14.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Ender's Game</div>
+                    <div class="author">
+                        ~Orson Scott Card
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $12.99
+                        </div>
+                        <div class="rating">
+                            (3.7<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Ender Wiggin trains for interstellar warfare, grappling with morality, isolation, and manipulation to save humanity.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="16">
+                <img src="images/bookCovers/15.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Uglies</div>
+                    <div class="author">
+                        ~Scott Westerfeld
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $4.99
+                        </div>
+                        <div class="rating">
+                            (4.1<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Tally Youngblood rebels against cosmetic conformity, uncovering the truth about beauty, freedom, and societal control.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="17">
+                <img src="images/bookCovers/16.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The Selection</div>
+                    <div class="author">
+                        ~Kiera Cass
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $8.99
+                        </div>
+                        <div class="rating">
+                            (4.3<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        America Singer enters a royal competition, torn between love, duty, and rebellion in a dystopian caste society.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="18">
+                <img src="images/bookCovers/17.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Red Queen</div>
+                    <div class="author">
+                        ~Victoria Aveyard
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $4.99
+                        </div>
+                        <div class="rating">
+                            (4.1<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Mare Barrow discovers latent powers, thrust into a world of deceit, revolution, and the struggle for equality.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="19">
+                <img src="images/bookCovers/18.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">Delirium</div>
+                    <div class="author">
+                        ~Lauren Oliver
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $19.99
+                        </div>
+                        <div class="rating">
+                            (4.8<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Lena Haloway questions love's suppression, navigating a society where emotion is considered a disease, facing forbidden romance.
+                    </div>
+                </div>
+            </div>   
+            <div class="book" id="20">
+                <img src="images/bookCovers/19.jpg" alt="book1.webp">
+
+                <div class="bookDesc">
+                    <div class="bookTitle">The 5th Wave</div>
+                    <div class="author">
+                        ~Rick Yancey
+                    </div>
+                    <div class="priceAndRating">
+                        <div class="price">
+                            $14.99
+                        </div>
+                        <div class="rating">
+                            (4.9<i class="fa-solid fa-star"></i>)
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    
+                    <div class="desc">
+                        <div>Description:</div>
+                        Cassie Sullivan survives alien invasion, fighting mistrust, love, and loss, uncovering humanity's resilience amidst annihilation.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="backToTop">
+            <a target="_top" href="#">Back to top</a>
+        </div>
+        <!-- <div class="madeBy" style="text-align: center; color: #ddd; padding: 10px 0; word-spacing: 1.5px;">
+            Made with &hearts; by Devansh & Ayush
+        </div> -->
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

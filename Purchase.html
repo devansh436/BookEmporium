@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="yourBooksStyles.css">
+    <link rel="stylesheet" href="purchaseStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let hu = document.getElementById("helloUser");
+            hu.textContent = "Hello, " + (localStorage.getItem("currUser"));
+    });
+    </script>
+
+<script>
+    var options = {
+        "key": "rzp_test_AWkeTb5W6qJ1YU", // Enter the Key ID generated from the Dashboard
+        "amount": "5000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "USD",
+        "name": "Book Emporium", //your business name
+        "description": "Order Bill",
+        "image": "images/logo 3.O.png",
+        "order_id": "order_O2Xal9EaIb8gS6", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response){
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature)
+        },
+        "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
+            "name": "Gaurav Kumar", //your customer's name
+            "email": "gaurav.kumar@example.com", 
+            "contact": "9000090000"  //Provide the customer's phone number for better conversion rates 
+        },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response){
+            alert(response.error.code);
+            alert(response.error.description);
+            alert(response.error.source);
+            alert(response.error.step);
+            alert(response.error.reason);
+            alert(response.error.metadata.order_id);
+            alert(response.error.metadata.payment_id);
+    });
+    document.getElementById('rzp-button1').onclick = function(e){
+        rzp1.open();
+        e.preventDefault();
+    }
+    </script>
+</head>
+<body onload="return loadHello()">
+    <nav id="navbar">
+        <!-- LOGO -->
+        <div class="navElement">
+            <a href="index.html"><img src="images/logo 3.O.png" alt="logo.png" id="navLogo"></a>
+        </div>
+        
+        <!-- LANGUAGE -->
+        <div class="navElement">
+            <a href="#" id="helloUser">
+    
+            </a>      
+            <!-- <select id="lang">
+                <option value="english"><a href="#">English</a></option>
+                <option value="hindi"><a href="#">Hindi</a></option>
+                <option value="gujarati"><a href="#">Gujarati</a></option>
+                <option value="marathi"><a href="#">Marathi</a></option>
+            </select>            
+            <i class="fa-solid fa-angle-down" id="langDown"></i> -->
+        </div>
+        
+        <!-- SEARCH BAR WITH BUTTON -->
+        <div class="navElement">
+            <form action="" id="searchBar">
+                <label> <i class="fa-solid fa-magnifying-glass" id="searchGlass"></i> <input type="submit" name="Search" value="" id="navSubmit"></label>
+                <input type="search" name="Search" id="navSearch" placeholder="Search..."  autocomplete="off">
+            </form>
+        </div>
+        
+        <!-- YOUR BOOKS -->
+        <div class="navElement">
+            <a href="yourBooks.html" target="_blank" id="yourBooks"> Your books</a>
+        </div>
+        
+        <!-- GENRE -->
+        <!-- Non-fiction, fantasy, fiction, dystopian, mystery, horror -->
+        <div class="navElement">
+            <!-- <a href="#"> Genre</a> -->
+            <select id="genre">
+                <option value="genre-default" hidden>Genre</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Science Fiction">Sci-Fi</option>
+                <option value="Dystopian">Dystopian</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Horror">Horror</option>
+            </select>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        
+        <!-- ABOUT US -->
+        <div class="navElement">
+            <a href="aboutUs.html"> About Us</a>
+        </div>
+    </nav>
+    <main id="checkout">
+        <h3>Checkout</h3>
+        <hr><br>
+        <form id="purchaseform">
+            <div class="box">
+            <h4>Delivery Address </h4>
+            <hr>
+            <br>
+            <div>
+                <br>
+                <lable for="State">State/Region</lable><br>
+                <select id="State" style="width: 75%; height: 25px;" required>
+                    <option value="state-default" hidden>State</option>
+                    <option value="GJ">Gujarat</option>
+                    <option value="MH">Maharashtra</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="KT">Karnataka</option>
+                    <option value="PB">Punjab</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="HR">Haryana</option>
+                    <option value="MP">Madhya Pradesh</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="Telan">Telangana</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="HP">Himachal Pradesh</option>
+                    <option value="J&K">Jammu and Kashmir</option>
+                    <option value="UK">Uttarakhand</option>
+                    <option value="LD">Ladakh</option>
+                    <option value="WB">West Bengal</option>
+                    <option value="JH">Jharkhand</option>
+                    <option value="OD">Odisha</option>
+                    <option value="CG">Chhatisgarh</option>
+                    <option value="SK">Sikkim</option>
+                    <option value="AM">Assam</option>
+                    <option value="MG">Meghalaya</option>
+                    <option value="ArunP">Arunachal Pradesh</option>
+                    <option value="MZ">Mizoram</option>
+                    <option value="TR">Tripura</option>
+                    <option value="MN">Manipur</option>
+                    <option value="NG">Nagaland</option>
+                </select>
+                <br><br>
+
+                <label for="Customer-name"> Name (First and Last Name)</label><br>
+                <input type="text" id="Customer-name" size="50" required>
+                <br><br>
+
+                <label for="Customer-add1">Address Line 1</label><br>
+                <input type="text" id="Customer-add1" size="50" required>
+                <br><br>
+
+                <label for="Customer-add2">Address Line 2</label><br>
+                <input type="text" id="Customer-add2" size="50">
+                <br><br>
+
+                <label for="Customer-city">City</label><br>
+                <input type="text" id="Customer-city" required>
+                <br><br>
+
+                <label for="Customer-zip">Zip/Postal Code</label><br>
+                <input type="text" id="Customer-zip" pattern="[0-9]{6}" required>
+                <br><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+            </div>
+            </div>
+            <div class="box">
+                <h4>Payment </h4>
+                <hr>
+                <br>
+                <input type="radio" id="credit-card" name="Payment" required>
+                <label for="credit-card">Credit Card</label><br>
+                <input type="radio" id="debit-card" name="Payment">
+                <label for="debit-card">Debit Card</label><br>
+                <input type="radio" id="cash-on-delivery" name="Payment">
+                <label for="cash-on-delivery">Cash on Delivery</label><br><br>
+            </div>
+            <div class="btn">
+                <button id="rzp-button1" onclick="return purchase()">Pay</button>  
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

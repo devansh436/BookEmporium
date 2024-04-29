@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'nunito sans';
+}
+
+body {
+    background-color: #2a2a2a;
+}
+
+.book {
+    text-align: center;
+    background-color: #222;
+    /* border: 1px solid #ffb520; */
+    color: #ccc;
+}
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffc240;
+    height: 80px;
+}
+
+.navElement {
+    padding-top: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #151515;
+    text-decoration: none;
+    transition:0.3s;
+}
+
+.navElement:hover {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+.navElement a:hover {
+    text-decoration: underline;
+}
+
+.navElement a {
+    text-decoration:none;
+    color: #151515;
+}
+
+
+.navElement select {
+    color: #151515;
+    font-size: 17px;
+    text-decoration: none;
+    appearance: none;
+    -webkit-appearance: none;
+    font-weight: bold;
+    background-color: inherit;
+    border: none;
+}
+
+.navElement select:hover {
+    text-decoration: underline ;
+    cursor: pointer;
+}
+
+#lang option {
+    font-size: 0.75em;
+}
+#langDown {
+    margin-left: -5px;
+}
+
+.fa-solid.fa-angle-down {
+    margin-left: -25px;
+}
+#genre {
+    transition: color 0.6s;
+}
+
+#genre option {
+    font-size: 0.75em;
+}
+
+#navLogo {
+    position: relative;
+    top: -12px;
+    height: 110%;
+    filter:grayscale();
+}
+
+#searchBar {
+    position: relative;
+    height: 40px;
+    top: -10px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 10px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+#navSearch {
+    width: 300px;
+    font-size: 16px; 
+    margin-top: 12px;
+    border: none;
+    background-color: #fff;
+}
+#navSearch:focus {
+    outline: none;
+}
+
+#navSubmit {
+    visibility: hidden;
+}
+
+#searchGlass {
+    margin: 0 9px;
+    color: navy;
+}
+
+#poster {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+    margin-top: 7px;
+}
+
+.posterImg {
+    width: 700px;
+    margin: 5px;;
+}
+
+/* #welcomeBox {
+    text-align: center;
+    background-color: #eee;
+    color: #2b2c2f;
+    font-weight: bold;
+    height: 1.3em;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 30px;
+} */
+
+#booksDisplay {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    justify-items: center;
+    grid-auto-rows: minmax(20px, auto);
+    grid-gap: 2em;
+}
+
+
+.book img{
+    display: inline-block;
+    margin: 10px auto;
+    width: 120px;
+    height: 185px;
+}
+
+
+.bookTitle {
+    font-size: 19px;
+}
+
+.author {
+    font-size: 13px;
+    margin-right: 19px;
+    margin-bottom: 6px;
+}
+
+.priceAndRating {
+    display: flex;
+    justify-content:center;
+    /* align-items: center; */
+    margin: 2px 0;
+}
+
+.price {
+    color: rgb(92, 120, 234);
+    font-weight: bold;
+    font-size: 19px;
+    margin: 0 2px;
+}
+
+.rating {
+    font-size: 15px;
+}
+
+.fa-solid.fa-star {
+    color: orange;
+}
+
+.addToCart {
+    margin: 5px 0;
+    transition: color 0.6s;
+    transition: transform 0.6s;
+}
+
+.addToCart:hover {
+    color: rgb(0, 183, 255);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.desc {
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.desc>div {
+    font-weight: bold;
+}
+
+footer {
+    background-color:#222;
+}
+
+.backToTop {
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.backToTop a {
+    text-decoration: none;
+    color: #ccc;
+}

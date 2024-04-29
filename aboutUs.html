@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="aboutUsStyles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        .box img {
+            display: inline-block;
+            width: 150px; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+            border-radius: 50%;
+            margin-right: 10px; /* Adjust the spacing between the images */
+        }
+
+        .members {
+            margin-left: 70px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .roll {
+            margin-left: 30px;
+            align-items: center;
+            
+        }
+
+        .name {
+            font-weight: bold;
+            margin-left: 10px;
+            transition: transform 0.2s;
+        }            
+        .name:hover {
+            transform: scale(1.05);
+        }
+        label:hover {
+            cursor: pointer;
+        }
+        input:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+                let hu = document.getElementById("helloUser");
+                hu.textContent = "Hello, " + (localStorage.getItem("currUser"));
+        });
+    </script>
+</head>
+<body>
+    <nav id="navbar">
+        <!-- LOGO -->
+        <div class="navElement">
+            <a href="index.html"><img src="images/logo 3.O.png" alt="logo.png" id="navLogo"></a>
+        </div>
+        
+        <!-- LANGUAGE -->
+        <div class="navElement">
+            <a href="#" id="helloUser"></a>
+        </div>
+        
+        <!-- SEARCH BAR WITH BUTTON -->
+        <div class="navElement">
+            <form action="" id="searchBar">
+                <label> <i class="fa-solid fa-magnifying-glass" id="searchGlass"></i> <input type="submit" name="Search" value="" id="navSubmit"></label>
+                <input type="search" name="Search" id="navSearch" placeholder="Search..."  autocomplete="off">
+            </form>
+        </div>
+        
+        <!-- YOUR BOOKS -->
+        <div class="navElement">
+            <a href="yourBooks.html" target="_blank" id="yourBooks"> Your books</a>
+        </div>
+        
+        <!-- GENRE -->
+        <!-- Non-fiction, fantasy, fiction, dystopian, mystery, horror -->
+        <div class="navElement">
+            <!-- <a href="#"> Genre</a> -->
+            <select id="genre">
+                <option value="genre-default" hidden>Genre</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Science Fiction">Sci-Fi</option>
+                <option value="Dystopian">Dystopian</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Horror">Horror</option>
+            </select>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        
+        <!-- ABOUT US -->
+        <div class="navElement">
+            <a href="aboutUs.html"> About Us</a>
+        </div>
+    </nav>
+
+    <!-- MAIN LAYOUT -->
+    <main>
+        <div class="box">
+            <div class="members">
+                <h2 style="text-align: center">Meet Our Team!</h2>
+                <div class="team-member" style="margin-top: 45px; margin-left: 45px; margin-bottom: 50px;">
+                    <a href="https://www.linkedin.com/in/devansh-deshpande-70982328b/">
+                    <img src="Devansh.jpg"></a>
+                    <div>
+                        <div class="name"><a href="https://www.linkedin.com/in/devansh-deshpande-70982328b/">Devansh Deshpande</a></div>
+                        <div class="roll">(23BCE056)</div>
+                    </div>
+                </div>
+                <div class="team-member" style="margin-left: 410px; margin-top: -204px; margin-bottom: 50px;">
+                    <a href="https://www.linkedin.com/in/ayushbhatnagar2004/">
+                    <img src="Ayush.jpg"></a>
+                    <div>
+                        <div class="name" style="margin-top: -5px;"><a href="https://www.linkedin.com/in/ayushbhatnagar2004/">Ayush Bhatnagar</a></div>
+                        <div class="roll">(23BTM007)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>About Book Emporium</h3>
+            <p>
+                Book Emporium is the go-to place for all the avid readers! You can buy books, e-books and also join a whole community filled with thousands of people like you!
+                You can give and read reviews, post your own stories, join reading groups, and also connnect with like minded individuals. Happy Reading!
+            </p>
+        </div>
+
+        <div class="box">
+            Your feedback is valuable to us! In case you find bugs and errors, fill this form below or reach out to us through these platforms.
+            <div>
+                <form action="mailto: devansh436@gmail.com" id="feedbackForm">
+                        <h3 style="text-align: center;">Feedback</h3>
+                        <hr>
+                        <div class="ipContainer">
+                            Mention your issue:
+                            <label><input type="radio" name="issue" id="issue1" required>Visual Bug</label>
+                            <label><input type="radio" name="issue" id="issue2">Payment issue</label>
+                            <label><input type="radio" name="issue" id="issue3">Account issue</label>
+                        </div>
+                        <div class="ipContainer">
+                            Attach a screenshot (optional):
+                            <input type="file" accept=".jpg, .jpeg, .png" name="bugSS" id="bugSS">
+                        </div>
+                        <div class="ipContainer">
+                            <div>Describe your issue: </div>
+                            <textarea name="bugDesc" id="bugDesc" cols="25" rows="6" required minlength="5"></textarea>
+                        </div>
+                        <div class="ipContainer">
+                            Since when did you start facing this issue?:
+                            <input type="date" name="bugDate" id="bugDate" max="2024-04-15" required> 
+                        </div>
+                        <div class="ipContainer">
+                            <input type="submit" value="Submit" id="Submit">
+                            <input type="reset" value="Reset" id="Submit">
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+            <div id="logos">
+                <a href="https://www.linkedin.com/feed/" target="_blank"> <i class="fa-brands fa-linkedin" ></i> </a>
+                <a href="https://www.instagram.com/book_emporium007?utm_source=qr&igsh=ajN5NGR2NW40MmR6" target="_blank"> <i class="fa-brands fa-instagram"></i> </a>
+                
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+    </main>    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Book Emporium!</title>
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav id="navLogin">
+        <span class="imgContainer">
+            <img src="images/reading4.jpg" alt="reading" id="welcomeImg">
+        </span>
+        <span id="welcome">
+            Welcome to Book Emporium!
+        </span>
+    </nav>
+    <main>
+        <form action="index.html" id="loginForm" onsubmit="return validate1() && verifyUser()">
+            <fieldset>
+                <legend>Sign in to continue</legend>
+                
+                <div class="ipContainer">
+                    <div>Username:</div>
+                    <input type="text" id="UsernameLogin" name="UsernameLogin" autocomplete="off" size="21px"  required>    
+                </div>
+                <div class="ipContainer">
+                    <div>Password:</div>
+                    <input type="password" id="PasswordLogin" name="PasswordLogin" autocomplete="off" size="21px" required>   
+                </div>
+                <div class="register">
+                    Don't have an account? <a href="register.html" id="regNow"> Register now.</a>
+                </div>
+                <div id="submitDiv">
+                    <input type="submit" value="Sign in" id="lSubmit">
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
